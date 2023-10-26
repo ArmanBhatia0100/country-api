@@ -1,6 +1,7 @@
 import CountryCard from "./CountryCard";
 import SearchBar from "./SearchBar";
 import SelectCountry from "./SelectCountry";
+import Countries from "../data/data.json";
 
 const Main = () => {
   return (
@@ -10,11 +11,9 @@ const Main = () => {
         <SelectCountry />
       </div>
       <div className="container px-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
-        <CountryCard />
-        <CountryCard />
-        <CountryCard />
-        <CountryCard />
-        <CountryCard />
+        {Countries.map((country) => {
+          return <CountryCard key={country.name} countriesData={country} />;
+        })}
       </div>
     </div>
   );
