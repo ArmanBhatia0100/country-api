@@ -1,16 +1,16 @@
 const CountryCard = ({ countriesData }) => {
   return (
-    <div class=" w-[20rem] h-[350px] pb-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-auto flex flex-col">
+    <div className=" w-[20rem] h-[350px] pb-2 bg-white rounded-lg shadow m-auto flex flex-col dark:bg-gray-100">
       <div className="w-full">
         <img
-          class="rounded-t-lg h-[150px] w-full"
+          className="rounded-t-lg h-[150px] w-full"
           src={countriesData.flags.png}
           alt="countryFlag"
         />
       </div>
 
-      <div class="p-5 text-md text-left flex flex-col justify-center">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <div className="p-5 text-md text-left flex flex-col justify-center">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
           {countriesData.name.length < 20
             ? countriesData.name
             : countriesData.name.slice(0, 20) + "..."}
