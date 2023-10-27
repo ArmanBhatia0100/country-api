@@ -1,6 +1,6 @@
 const CountryCard = ({ countriesData }) => {
   return (
-    <div className=" w-[20rem] h-[350px] pb-2 bg-white rounded-lg shadow m-auto flex flex-col dark:bg-gray-100">
+    <div className="container box-border max-w-[20rem] h-[350px] pb-2 bg-white rounded-lg shadow m-auto flex flex-col dark:bg-gray-100">
       <div className="w-full">
         <img
           className="rounded-t-lg h-[150px] w-full"
@@ -9,7 +9,7 @@ const CountryCard = ({ countriesData }) => {
         />
       </div>
 
-      <div className="p-5 text-md text-left flex flex-col justify-center">
+      <div className="p-5 text-md text-left flex flex-col justify-center w-full">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
           {countriesData.name.length < 20
             ? countriesData.name

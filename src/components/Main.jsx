@@ -49,7 +49,7 @@ const Main = () => {
         <SearchBar methods={{ filter: getCountriesHandler }} />
         <SelectCountry methods={{ getRegion: getSelectedRegion }} />
       </div>
-      <div className="dark:bg-gray-800 px-40 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="container px-[1rem] w-full dark:bg-gray-800 pb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-3 xl:px-10">
         {countriesList.map((country) => {
           return <CountryCard key={country.name} countriesData={country} />;
         })}
