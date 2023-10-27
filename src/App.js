@@ -4,9 +4,11 @@ import Main from "./components/Main";
 
 function App() {
   const [theme, setTheme] = useState("");
+
   function getThemeHandler(newTheme) {
     setTheme(newTheme);
   }
+
   return (
     <div className={`App ${theme}`}>
       <div className="wrapper">

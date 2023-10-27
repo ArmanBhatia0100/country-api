@@ -4,17 +4,42 @@ import SelectCountry from "./SelectCountry";
 import Countries from "../data/data.json";
 import { useState } from "react";
 
+// what will happen if the region is changed and user search?
+
 const Main = () => {
   const [countriesList, setCountriesList] = useState(Countries);
-
+  const [selectedRegion, isSelectedRegion] = useState("default");
+  console.log(selectedRegion);
+  // input countries
   const getCountriesHandler = (countryName = "") => {
-    const filterCountries = Countries.filter((country) =>
-      country.name.toLowerCase().includes(countryName)
-    );
-    setCountriesList(() => filterCountries);
+    if (selectedRegion != "default") {
+      console.log("wor");
+      const filterCountries = Countries.filter((country) => {
+        return (
+          country.name.toLowerCase().includes(countryName) &&
+          country.region.toLowerCase() == selectedRegion.toLowerCase()
+        );
+      });
+      setCountriesList(() => filterCountries);
+    } else {
+      const filterCountries = Countries.filter((country) =>
+        country.name.toLowerCase().includes(countryName)
+      );
+      setCountriesList(() => filterCountries);
+    }
   };
-  const getSelectedRegion = (selectedRegion = "") => {
-    console.log(selectedRegion);
+
+  // input Regions
+  const getSelectedRegion = (selectedRegion = "default") => {
+    isSelectedRegion(() => selectedRegion);
+    const filterCountries = Countries.filter((country) => {
+      if (selectedRegion == "default") {
+        return countriesList;
+      } else {
+        return country.region.toLowerCase() === selectedRegion.toLowerCase();
+      }
+    });
+    setCountriesList(() => filterCountries);
   };
 
   return (
