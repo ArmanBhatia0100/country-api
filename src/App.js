@@ -10,8 +10,8 @@ function App() {
   return (
     <div className={`App ${theme}`}>
       <div className="wrapper">
-        <Header theme={theme} getTheme={getThemeHandler} />
-        <Main theme={theme} />
+        <Header getTheme={getThemeHandler} />
+        <Main />
       </div>
     </div>
   );

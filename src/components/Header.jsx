@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Header = ({ theme, getTheme }) => {
+const Header = ({ getTheme }) => {
   const [themeChecked, setThemeChecked] = useState(false);
-  console.log(themeChecked);
-  {
-    themeChecked ? getTheme("dark") : getTheme("light");
-  }
+  useEffect(() => {
+    if (themeChecked) {
+      getTheme("dark");
+    } else {
+      getTheme("");
+    }
+  }, [themeChecked]);
   return (
     <header className="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-3 drop-shadow-md flex justify-between">
       <h3 className="dark:text-gray-300 text-md font-bold text-left">
