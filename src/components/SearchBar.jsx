@@ -31,6 +31,7 @@ const SearchBar = ({ methods }) => {
           className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500    dark:focus:ring-blue-500 dark:focus:border-blue-200"
           placeholder="Countries..."
           onChange={(e) => {
+            e.preventDefault();
             const userInput = e.target.value.toLowerCase();
             methods.filter(userInput);
           }}
