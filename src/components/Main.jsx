@@ -12,12 +12,12 @@ const Main = () => {
   console.log(selectedRegion);
   // input countries
   const getCountriesHandler = (countryName = "") => {
-    if (selectedRegion != "default") {
+    if (selectedRegion !== "default") {
       console.log("wor");
       const filterCountries = Countries.filter((country) => {
         return (
           country.name.toLowerCase().includes(countryName) &&
-          country.region.toLowerCase() == selectedRegion.toLowerCase()
+          country.region.toLowerCase() === selectedRegion.toLowerCase()
         );
       });
       setCountriesList(() => filterCountries);
@@ -33,7 +33,7 @@ const Main = () => {
   const getSelectedRegion = (selectedRegion = "default") => {
     isSelectedRegion(() => selectedRegion);
     const filterCountries = Countries.filter((country) => {
-      if (selectedRegion == "default") {
+      if (selectedRegion === "default") {
         return countriesList;
       } else {
         return country.region.toLowerCase() === selectedRegion.toLowerCase();

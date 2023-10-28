@@ -8,7 +8,7 @@ const Header = ({ getTheme }) => {
     } else {
       getTheme("");
     }
-  }, [themeChecked]);
+  }, [themeChecked, getTheme]);
   return (
     <header className="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-3 drop-shadow-md flex justify-between">
       <h3 className="dark:text-gray-300 text-md font-bold text-left">
