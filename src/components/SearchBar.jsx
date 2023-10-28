@@ -1,6 +1,6 @@
 const SearchBar = ({ methods }) => {
   return (
-    <form className="max-w-sm m-5">
+    <form className="max-w-sm m-5" onSubmit={(e) => e.preventDefault()}>
       <label
         htmlFor="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only "
