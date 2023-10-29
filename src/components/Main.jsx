@@ -4,12 +4,9 @@ import SelectCountry from "./SelectCountry";
 import Countries from "../data/data.json";
 import { useState } from "react";
 
-// what will happen if the region is changed and user search?
-
 const Main = () => {
   const [countriesList, setCountriesList] = useState(Countries);
   const [selectedRegion, isSelectedRegion] = useState("default");
-  console.log(selectedRegion);
   // input countries
   const getCountriesHandler = (countryName = "") => {
     if (selectedRegion !== "default") {

@@ -1,29 +1,22 @@
 import { useState } from "react";
-import Header from "./components/Header";
-import Main from "./components/Main";
 import { Routes, Route } from "react-router";
+import FlagDetailPage from "./components/FlagDetailPage";
+import Layout from "./components/Layout/Layout";
+
+import Home from "./pages/Home";
 
 function App() {
-  const [theme, setTheme] = useState("");
-
-  function getThemeHandler(newTheme) {
-    setTheme(newTheme);
-  }
-
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <div className={`App ${theme}`}>
-            <div className="wrapper">
-              <Header getTheme={getThemeHandler} />
-              <Main />
-            </div>
-          </div>
-        }
-      ></Route>
-    </Routes>
+    <div className={`App`}>
+      <div className="wrapper">
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/country/:alpha2Code" element={<FlagDetailPage />}></Route>
+          </Route>
+        </Routes>
+      </div>
+    </div>
   );
 }
 
