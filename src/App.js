@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router";
 import FlagDetailPage from "./components/FlagDetailPage";
 import Layout from "./components/Layout/Layout";
