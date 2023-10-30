@@ -47,7 +47,7 @@ const FlagDetailPage = () => {
                   </h5>
                   <h5 className="font-bold">
                     Region:
-                    <span className="font-light"> {countryDetail.population}</span>
+                    <span className="font-light"> {countryDetail.region}</span>
                   </h5>
                   <h5 className="font-bold">
                     Sub Region:
