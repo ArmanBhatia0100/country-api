@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 const FlagDetailPage = () => {
   const params = useParams();
-
   const [countryDetail, setCountryDetail] = useState(null);
   useEffect(() => {
     setCountryDetail(() => Countries.find((country) => country.alpha2Code === params.alpha2Code));

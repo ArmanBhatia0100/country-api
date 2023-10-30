@@ -10,18 +10,12 @@ const Main = () => {
   // input countries
   const getCountriesHandler = (countryName = "") => {
     if (selectedRegion !== "default") {
-      console.log("wor");
       const filterCountries = Countries.filter((country) => {
-        return (
-          country.name.toLowerCase().includes(countryName) &&
-          country.region.toLowerCase() === selectedRegion.toLowerCase()
-        );
+        return country.name.toLowerCase().includes(countryName) && country.region.toLowerCase() === selectedRegion.toLowerCase();
       });
       setCountriesList(() => filterCountries);
     } else {
-      const filterCountries = Countries.filter((country) =>
-        country.name.toLowerCase().includes(countryName)
-      );
+      const filterCountries = Countries.filter((country) => country.name.toLowerCase().includes(countryName));
       setCountriesList(() => filterCountries);
     }
   };
@@ -40,7 +34,7 @@ const Main = () => {
   };
 
   return (
-    <div className="main ">
+    <div className="main">
       {/* flexbox */}
       <div className=" dark:bg-gray-800 flex flex-col lg:flex-row lg:justify-between  ">
         <SearchBar methods={{ filter: getCountriesHandler }} />
