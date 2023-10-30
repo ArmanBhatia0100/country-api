@@ -10,7 +10,6 @@ const FlagDetailPage = () => {
   useEffect(() => {
     setCountryDetail(() => Countries.find((country) => country.alpha2Code === params.alpha2Code));
   }, [params, countryDetail]);
-  setCountryDetail(() => Countries.find((country) => country.alpha2Code === params.alpha2Code));
 
   return (
     <div className="p-20">
@@ -66,13 +65,23 @@ const FlagDetailPage = () => {
                   <h5 className="font-bold">
                     Currency:
                     {countryDetail.currencies.map((item) => {
-                      return <span className="font-light"> {item.code}</span>;
+                      return (
+                        <span key={item.code} className="font-light">
+                          {" "}
+                          {item.code}
+                        </span>
+                      );
                     })}
                   </h5>
                   <h5 className="font-bold">
                     Language:
                     {countryDetail.languages.map((item) => {
-                      return <span className="font-light"> {item.name} </span>;
+                      return (
+                        <span key={item.name} className="font-light">
+                          {" "}
+                          {item.name}{" "}
+                        </span>
+                      );
                     })}
                   </h5>
                 </div>
